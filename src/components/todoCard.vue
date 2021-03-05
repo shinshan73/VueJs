@@ -3,9 +3,9 @@
     <header>
        <p>{{date}}</p>
        <h1>{{title}}</h1>
-       <p>{{task}}Tâches</p>
+       <p>{{tasks.length}} Tâches</p>
     </header>
-    <newTodo>
+    <newTodo v-on:addTask="submitTask">
     </newTodo>
   </div>
 </template>
@@ -36,11 +36,15 @@ import newTodo from './newTodo'
     }
   },
 
- /* methods:{
-    addTask(task){
-      this.tasks.push(task);
-    }
-  }, */
+   methods:{
+      submitTask(task){
+        this.tasks.push({
+          description: task, done: false
+        });
+      }
+    }, 
+
+
 }
 
   
