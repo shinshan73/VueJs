@@ -1,5 +1,5 @@
 <template>
-    <div v-for="(task, index) in carrot" :key="(task, index)" class="liste">
+    <div v-for="(task, index) in containTask" :key="(task, index)" class="liste">
         <input type="checkbox">
         <div class="reponse">
            {{task.description}}
@@ -11,26 +11,29 @@
 <script>
 export default {
     name: 'todoList',
-    props:['carrot']
+    props:['containTask']
 }
 </script>
+
 
 <style scoped>
 
     input{
-        height: 25px;
-        width: 25px;
-        margin-right: 200px;
+        height: 40px;
+        width: 40px;
+        border-radius: 100px;
     }
 
 
-    button{
-        margin-left: 200px;
-    }
 
     .liste{
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
+    }
+
+    .reponse{
+        color: white;
+        font-size: 30px;
     }
 
 

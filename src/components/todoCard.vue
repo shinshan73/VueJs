@@ -7,7 +7,7 @@
     </header>
     <newTodo v-on:addTask="submitTask">
     </newTodo>
-    <todoList v-bind:carrot="tasks"></todoList>
+    <todoList v-bind:containTask="tasks"></todoList>
   </div>
 
 </template>
