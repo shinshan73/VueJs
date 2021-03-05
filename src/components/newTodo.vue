@@ -1,25 +1,26 @@
 <template>
-    <form action="">
+    <form>
         <div class="tache">
              <input v-model="task" type="text" id="task" placeholder="Nouvelle tâche..." required>
         </div>
 
           <div class="boutton">
             <button v-on:click="message">+</button>
-         </div>            
+         </div>
+
+         <todoList>
+         </todoList>
     </form>
-    <todoList>
-    </todoList>
 </template>
 
 <script>
 
-    import todoList from './todoList'
+    import todoList from './todoList';
 
     export default {
     name: 'newTodo',
     components:{
-        todoList,
+      todoList
     },
     data(){
         return {
@@ -32,9 +33,7 @@
              this.$emit('addTask',this.task)
          }
     },
-
-        
-    }
+}
 
 </script>
 

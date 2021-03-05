@@ -7,16 +7,20 @@
     </header>
     <newTodo v-on:addTask="submitTask">
     </newTodo>
+    <todoList v-bind:carrot="tasks"></todoList>
   </div>
+
 </template>
 
 <script>
 import newTodo from './newTodo'
+import todoList from './todoList';
 
   export default {
   name:'todoCard',
   components:{
     newTodo,
+    todoList
   },
   data() {
 
@@ -55,11 +59,10 @@ import newTodo from './newTodo'
 
 div{
   background-color: #FFD700;
-  height: 400px;
   width: 1000px;
   margin: 0 auto;
   margin-top: 50px;
-  margin-bottom: 200px;
+  padding-bottom: 50px;
 }
 
 header{
@@ -71,5 +74,11 @@ header{
 h1{
   color: red;
 }
+
+.liste{
+  margin-top: 100px;
+}
+
+
 
 </style>

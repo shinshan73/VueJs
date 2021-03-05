@@ -1,19 +1,17 @@
 <template>
-    <form action="">
-        <label class="checkbox">
+    <div v-for="(task, index) in carrot" :key="(task, index)" class="liste">
         <input type="checkbox">
-            <p>
-                {{task}}
-            </p>    
-        </label>
+        <div class="reponse">
+           {{task.description}}
+        </div>
         <button class="delete is-large"></button>
-    </form>
+    </div>
 </template>
 
 <script>
 export default {
     name: 'todoList',
-    props:['task']
+    props:['carrot']
 }
 </script>
 
@@ -22,16 +20,18 @@ export default {
     input{
         height: 25px;
         width: 25px;
-        margin-right: 100px;
+        margin-right: 200px;
     }
 
-    form{
+
+    button{
+        margin-left: 200px;
+    }
+
+    .liste{
         display: flex;
         justify-content: center;
     }
 
-    button{
-        margin-left: 100px;
-    }
 
 </style>
