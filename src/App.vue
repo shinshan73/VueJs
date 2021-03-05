@@ -1,7 +1,6 @@
 <template>
     <div id="app">
       <todoCard>
-
       </todoCard>
     </div>
 
@@ -23,12 +22,13 @@
 </template>
 
 <script>
-import todoCard from './components/todoCard'
+ import todoCard from './components/todoCard'
+
 
 export default {
   name: 'app',
   components: {
-  todoCard
+  todoCard,
   }
 }
 </script>

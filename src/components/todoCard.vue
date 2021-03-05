@@ -5,14 +5,19 @@
        <h1>{{title}}</h1>
        <p>{{task}}Tâches</p>
     </header>
-    <newTodo @custom-event-name="setMessage"/>
+    <newTodo>
+    </newTodo>
   </div>
 </template>
 
 <script>
+import newTodo from './newTodo'
 
   export default {
-  name: 'todoCard',
+  name:'todoCard',
+  components:{
+    newTodo,
+  },
   data() {
 
       return {
@@ -31,29 +36,15 @@
     }
   },
 
-  methods:{
+ /* methods:{
     addTask(task){
       this.tasks.push(task);
     }
-  },
-
+  }, */
 }
 
-  import newTodo from './newTodo.vue'
-  export default{
-    components : { newTodo},
-    data(){
-      return{
-        message: "Hi"
-      }
-    },
-
-    methods:{
-      setMessage(payload){
-        this.message = payload.message
-      }
-    }
-  }
+  
+   
 </script>
 
 <style scoped>
@@ -76,6 +67,5 @@ header{
 h1{
   color: red;
 }
-
 
 </style>
